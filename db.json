@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "name": "Сергей",
+      "id": 1
+    },
+    {
+      "name": "Sergey",
+      "id": 2
+    },
+    {
+      "name": "Sergey",
+      "id": 3
+    },
+    {
+      "name": "Sergey",
+      "id": 4
+    },
+    {
+      "name": "Sergey",
+      "id": 5
+    },
+    {
+      "name": "Sergeuy",
+      "id": 6
+    },
+    {
+      "name": "Andrew",
+      "id": 7
+    },
+    {
+      "name": "sergey",
+      "id": 8
+    },
+    {
+      "name": "Sergey",
+      "id": 9
+    },
+    {
+      "name": "Andrew",
+      "id": 10
+    }
+  ],
+  "msgs": [
+    {
+      "name": "Sergey",
+      "msg": "Hello",
+      "date": "2021-02-25T09:02:57.896Z",
+      "id": 1
+    },
+    {
+      "name": "Andrew",
+      "msg": "Hello",
+      "date": "2021-02-25T09:03:12.184Z",
+      "id": 2
+    }
+  ]
+}
