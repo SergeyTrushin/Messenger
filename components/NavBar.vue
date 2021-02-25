@@ -2,8 +2,8 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <h4>Messenger</h4>
-      <span v-if="user.name !== ''">
-        В сети: {{ users.length + 1}}
+      <span>
+        В сети: {{ users }}
       </span>
       <h4 v-if="user.name !== ''">
          <b-icon icon="person-fill"></b-icon>
@@ -16,6 +16,11 @@
 
 <script>
   export default {
+    mounted() {
+      setInterval(() => {
+        this.$store.dispatch('user/loadUsers')
+      },100)
+    },
     computed: {
       user() {
         const user = this.$store.getters['user/user']
@@ -23,14 +28,14 @@
       },
       users() {
         const users = this.$store.getters['user/users']
-        return users
+        return users.length
       },
     },
     methods: {
       logout() {
         this.$store.dispatch('user/deleteUser', this.user)
+        this.$store.commit('localStorage/clearStorage')
         this.$store.commit('user/logout')
-        localStorage.removeItem('user')
         this.$router.push('/')
       }
     }

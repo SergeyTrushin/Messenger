@@ -1,3 +1,8 @@
+export const state = () => ({
+  user: {name: ''}
+})
+
 export const mutations = {
-  updateUser: (state, user) => state.user = user
+  updateStorage: (state, user) => state.user = user,
+  clearStorage: (state) => state.user = {name: ''}
 }

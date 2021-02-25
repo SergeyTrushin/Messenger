@@ -25,8 +25,6 @@ export const actions = {
     const response = await fetch('http://localhost:3001/users')
     const users = await response.json()
 
-    ctx.commit('setUsers', users)
-
     if (!users.find(u => u.name == name)) {
       const resp = await fetch('http://localhost:3001/users/', {
         method: "POST",
@@ -44,6 +42,12 @@ export const actions = {
     }
 
     return user
+  },
+  async loadUsers(ctx) {
+    const response = await fetch('http://localhost:3001/users')
+    const users = await response.json()
+
+    ctx.commit('setUsers', users)
   }
 }
 

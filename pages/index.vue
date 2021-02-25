@@ -17,8 +17,10 @@
       }
     },
     beforeMount() {
-      let user = localStorage.getItem('user')
-      console.log('user ===', user)
+      let user = this.$store.state.localStorage.user
+      if (user.name !== '') {
+        this.$router.push('/messenger')
+      }
     },
     methods: {
       async login() {
@@ -26,7 +28,7 @@
           const user = await this.$store.dispatch('user/login', this.name.trim())
           if (user !== '0') {
             await this.$store.commit('user/updateUser', user)
-            localStorage.setItem('user', JSON.stringify(user))
+            await this.$store.commit('localStorage/updateStorage', user)
             this.$router.push('/messenger')
           } else {
             this.invalid = true

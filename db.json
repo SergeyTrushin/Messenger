@@ -1,132 +1,29 @@
 {
-  "users": [
-    {
-      "name": "serga",
-      "id": 1
-    },
-    {
-      "name": "sdsa",
-      "id": 2
-    },
-    {
-      "name": "sers",
-      "id": 3
-    },
-    {
-      "name": "ds1",
-      "id": 4
-    },
-    {
-      "name": "sd1",
-      "id": 5
-    },
-    {
-      "name": "de1s",
-      "id": 6
-    },
-    {
-      "name": "fasf123",
-      "id": 7
-    },
-    {
-      "name": "asd123s",
-      "id": 8
-    },
-    {
-      "name": "serega1313",
-      "id": 9
-    }
-  ],
+  "users": [],
   "msgs": [
     {
-      "name": "123s",
-      "msg": "fsa",
-      "date": "2021-02-25T13:41:12.425Z",
+      "name": "sergey",
+      "msg": "fasf",
+      "date": "2021-02-25T16:22:10.535Z",
       "id": 1
     },
     {
-      "name": "123s",
-      "msg": "123asf",
-      "date": "2021-02-25T13:41:14.391Z",
+      "name": "sergey",
+      "msg": "asfasf",
+      "date": "2021-02-25T16:22:12.335Z",
       "id": 2
     },
     {
-      "name": "123s",
-      "msg": "hello",
-      "date": "2021-02-25T13:43:44.388Z",
+      "name": "sergey",
+      "msg": "fasf",
+      "date": "2021-02-25T16:22:14.384Z",
       "id": 3
     },
     {
-      "name": "serga",
-      "msg": "312",
-      "date": "2021-02-25T13:45:55.868Z",
+      "name": "sergeu",
+      "msg": "hello",
+      "date": "2021-02-25T16:30:51.172Z",
       "id": 4
-    },
-    {
-      "name": "serga",
-      "msg": "asf",
-      "date": "2021-02-25T13:45:56.036Z",
-      "id": 5
-    },
-    {
-      "name": "serga",
-      "msg": "213123asf",
-      "date": "2021-02-25T13:45:58.212Z",
-      "id": 6
-    },
-    {
-      "name": "serga",
-      "msg": "asf123",
-      "date": "2021-02-25T13:46:00.004Z",
-      "id": 7
-    },
-    {
-      "name": "serga",
-      "msg": "312as",
-      "date": "2021-02-25T13:46:13.515Z",
-      "id": 8
-    },
-    {
-      "name": "serga",
-      "msg": "a1123asf",
-      "date": "2021-02-25T13:46:16.379Z",
-      "id": 9
-    },
-    {
-      "name": "serga",
-      "msg": "213fas",
-      "date": "2021-02-25T13:46:18.835Z",
-      "id": 10
-    },
-    {
-      "name": "sdsa",
-      "msg": "fasf",
-      "date": "2021-02-25T13:48:56.778Z",
-      "id": 11
-    },
-    {
-      "name": "sers",
-      "msg": "213asasd",
-      "date": "2021-02-25T13:50:41.924Z",
-      "id": 12
-    },
-    {
-      "name": "sers",
-      "msg": "",
-      "date": "2021-02-25T13:50:42.192Z",
-      "id": 13
-    },
-    {
-      "name": "sers",
-      "msg": "fasd21321ds",
-      "date": "2021-02-25T13:50:47.096Z",
-      "id": 14
-    },
-    {
-      "name": "ds1",
-      "msg": "dev",
-      "date": "2021-02-25T13:51:35.051Z",
-      "id": 15
     }
   ]
 }
