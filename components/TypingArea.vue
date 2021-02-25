@@ -1,5 +1,5 @@
 <template>
-  <form action="#" class="bg-light" @submit.prevent="sendMessage">
+  <form action="#" class="bg-light mb-5" @submit.prevent="sendMessage">
     <div class="input-group">
       <input type="text" placeholder="Введите сообщение" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light" v-model="inputVal">
       <div class="input-group-append">

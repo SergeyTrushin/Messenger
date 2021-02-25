@@ -14,7 +14,8 @@
     "bootstrap-icons": "^1.4.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "nuxt-vuex-localstorage": "^1.2.7"
   },
   "devDependencies": {
     "json-server": "^0.16.3"

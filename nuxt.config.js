@@ -37,6 +37,9 @@ export default {
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    ['nuxt-vuex-localstorage', {
+      localStorage: ['user']
+    }]
   ],
 
   bootstrapVue: {

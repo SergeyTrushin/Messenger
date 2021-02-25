@@ -16,6 +16,10 @@
         invalid: false
       }
     },
+    beforeMount() {
+      let user = localStorage.getItem('user')
+      console.log('user ===', user)
+    },
     methods: {
       async login() {
         if (this.name.trim()) {
