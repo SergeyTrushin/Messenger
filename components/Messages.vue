@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 py-5 chat-box bg-white ">
+  <div class="px-4 py-5 chat-box bg-white overflow-auto h-50">
     <div v-for="(msg, id) in arrMsg" :key="id" class="media w-50 mb-3" :class="{ 'ml-auto': name===msg.name }">
       <div class="media-body">
         <div class="mb-2"
@@ -58,7 +58,7 @@
           console.log(error)
         })
       },
-      scrollBottom: function () {
+      scrollBottom() {
         setTimeout(() => {
           document.getElementsByClassName('chat-box')[0].scrollTop = document.getElementsByClassName('chat-box')[0].scrollHeight
         }, 100)
@@ -66,3 +66,9 @@
     }
   }
 </script>
+
+<style>
+  .chat-box {
+    
+  }
+</style> 

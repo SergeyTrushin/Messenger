@@ -1,9 +1,11 @@
 <template>
-  <form action="#" class="bg-light mb-5" @submit.prevent="sendMessage">
+  <form action="#" class="bg-light my-5" @submit.prevent="sendMessage">
     <div class="input-group">
       <input type="text" placeholder="Введите сообщение" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light" v-model="inputVal">
       <div class="input-group-append">
-        <button id="button-addon2" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+        <button id="button-addon2" type="submit" class="btn btn-link">
+          <b-icon icon="reply-fill"></b-icon>
+        </button>
       </div>
     </div>
   </form>
@@ -24,8 +26,8 @@
     },
     methods: {
       sendMessage: function () {
-        console.log(this.name)
-        this.$axios.$post('http://localhost:3001/msgs', {
+        if (this.inputVal.trim()) {
+          this.$axios.$post('http://localhost:3001/msgs', {
           name: this.name,
           msg: this.inputVal,
           date: new Date()
@@ -41,6 +43,7 @@
         .catch((error) => {
           console.log(error)
         })
+        }
       },
     }
   }

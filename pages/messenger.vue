@@ -1,5 +1,5 @@
 <template>
-  <div class="col-7 px-0">
+  <div class="col-12 px-0">
     <Messages />
     <TypingArea />
   </div>
