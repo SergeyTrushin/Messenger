@@ -16,7 +16,6 @@
     data () {
       return {
         inputVal: '',
-        inputNick: ''
       }
     },
     computed: {
@@ -25,7 +24,7 @@
       }
     },
     methods: {
-      sendMessage: function () {
+      sendMessage() {
         if (this.inputVal.trim()) {
           this.$axios.$post('http://localhost:3001/msgs', {
           name: this.name,
@@ -37,7 +36,6 @@
           }
         }).then((response) => {
           this.inputVal = ''
-          this.scrollBottom()
           this.arrMsg.push(response)
         })
         .catch((error) => {

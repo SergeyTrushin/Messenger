@@ -24,7 +24,6 @@
     data () {
       return {
         name: '',
-        arrMsg: '',
         inputNick: ''
       }
     },
@@ -38,6 +37,11 @@
       this.getAllMsg()
       this.showChat()
     },
+    computed: {
+      arrMsg() {
+        return this.$store.getters['user/getAllMsg']
+      }
+    },
     methods: {
       showChat() {
         setInterval(() => {
@@ -45,15 +49,7 @@
         }, 1000)
       },
       getAllMsg() {
-        this.$axios.$get('http://localhost:3001/msgs')
-        .then((response) => {
-          
-          this.arrMsg = response
-          
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+        this.$store.dispatch('user/getAllMsg')
       },
     }
   }
