@@ -1,7 +1,8 @@
 export const state = () => ({
   user: {
     name: ''
-  }
+  },
+  users: []
 })
 
 export const mutations =  {
@@ -10,14 +11,13 @@ export const mutations =  {
   },
   logout(state) {
     state.user = {name: ''}
-  }
+  },
+  setUsers(state, users) {
+    state.users = users
+  } 
 }
 
 export const actions = {
-  async setUser(ctx, id) {
-    const user = users.find(user => user.id == id)
-    ctx.commit('updateUser', user)
-  },
   async deleteUser(ctx, user) {
     const resp = await fetch(`http://localhost:3001/users/${user.id}`, {
       method: "DELETE"
@@ -26,6 +26,8 @@ export const actions = {
   async login(ctx, name) {
     const response = await fetch('http://localhost:3001/users')
     const users = await response.json()
+
+    ctx.commit('setUsers', users)
 
     if (!users.find(u => u.name == name)) {
       const resp = await fetch('http://localhost:3001/users/', {
@@ -48,5 +50,6 @@ export const actions = {
 }
 
 export const getters = {
-  user: s => s.user
+  user: s => s.user,
+  users: s => s.users
 }

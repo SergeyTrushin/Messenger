@@ -2,7 +2,9 @@
   <form @submit.prevent="login" class="input-group mt-2">
     <input type="text" class="form-control" placeholder="Введите ваше имя" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="name">
     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Войти</button>
-    <span v-if="invalid">asdas</span>
+    <div class="alert alert-danger col-12 mt-2" v-if="invalid">
+      Пользователь с таким именем уже в сети! Введите другое имя, пожалуйста.
+    </div>
   </form>
 </template>
 
@@ -16,13 +18,17 @@
     },
     methods: {
       async login() {
-        const user = await this.$store.dispatch('user/login', this.name)
-        if (user !== '0') {
-          this.$store.commit('user/updateUser', user)
-        } else {
-
+        if (this.name.trim()) {
+          const user = await this.$store.dispatch('user/login', this.name.trim())
+          if (user !== '0') {
+            await this.$store.commit('user/updateUser', user)
+            localStorage.setItem('user', JSON.stringify(user))
+            this.$router.push('/messenger')
+          } else {
+            this.invalid = true
+            this.name = ''
+          }
         }
-        this.$router.push('/messenger')
       }
     },
     
