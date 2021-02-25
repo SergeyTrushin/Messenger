@@ -2,6 +2,7 @@
   <form @submit.prevent="login" class="input-group mt-2">
     <input type="text" class="form-control" placeholder="Введите ваше имя" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="name">
     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Войти</button>
+    <span v-if="invalid">asdas</span>
   </form>
 </template>
 
@@ -9,23 +10,18 @@
   export default {
     data() {
       return {
-        name: ''
+        name: '',
+        invalid: false
       }
     },
     methods: {
       async login() {
-        const resp = await fetch('http://localhost:3001/users/', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            "name": this.name,
-          }
-          )
-        })
-        const user = await resp.json()
-        await this.$store.dispatch('user/setUser', user.id)
+        const user = await this.$store.dispatch('user/login', this.name)
+        if (user !== '0') {
+          this.$store.commit('user/updateUser', user)
+        } else {
+
+        }
         this.$router.push('/messenger')
       }
     },

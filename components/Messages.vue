@@ -29,12 +29,13 @@
       }
     },
     beforeCreate() {
-      if (!this.$store.getters['user/name']) {
+      if (!this.$store.getters['user/user'].name) {
         this.$router.push('/')
       }
     },
     mounted() {
-      this.name = this.$store.getters['user/name']
+      this.name = this.$store.getters['user/user'].name
+      console.log(this.name)
       this.getAllMsg()
       this.showChat()
     },

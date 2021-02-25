@@ -19,7 +19,7 @@
     },
     computed: {
       name() {
-        return this.$store.getters['user/name']
+        return this.$store.getters['user/user'].name
       }
     },
     methods: {
